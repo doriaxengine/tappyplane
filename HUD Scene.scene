@@ -1,0 +1,758 @@
+id: 3
+name: HUD Scene
+scene:
+  backgroundColor: [0.525, 0.525, 0.525, 1]
+  shadowQuality: low
+  lightState: off
+  globalIlluminationIntensity: 0.1
+  globalIlluminationColor: [1, 1, 1]
+  ambientLight2DIntensity: 1
+  ambientLight2DColor: [1, 1, 1]
+  shadow2DQuality: low
+  ssaoEnabled: false
+  ssaoRadius: 0.5
+  ssaoIntensity: 1
+  ssaoBias: 0.025
+  ssrEnabled: false
+  ssrMaxDistance: 8
+  ssrThickness: 0.5
+  ssrMaxSteps: 48
+  ssrIntensity: 1
+  ssrBlur: 0
+  gravity2D: [0, -9.81]
+  gravity3D: [0, -9.81, 0]
+  fixedResolutionEnabled: false
+  fixedResolutionWidth: 640
+  fixedResolutionHeight: 360
+  fixedResolutionFilter: nearest
+  enableUIEvents: not_set
+sceneType: scene_ui
+mainCamera: 0
+maxValues:
+  maxSubmeshes: 0
+  maxTilemapTilesRect: 0
+  maxTilemapTiles: 0
+  maxExternalBuffers: 0
+  maxSpriteFrames: 0
+  maxBones: 0
+shaderKeys:
+  - type: ui
+    properties: 2
+  - type: ui
+    properties: 9
+  - type: blit
+entities:
+  - type: Entity
+    entity: 1001
+    name: Score
+    components:
+      transform:
+        position: [623, 0, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [623, 0, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [623, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [623, 0, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        buffer:
+          type: vertex_buffer
+          usage: dynamic
+          stride: 20
+          size: 80
+          count: 4
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: position
+              dataType: float
+              bufferName: ""
+              elements: 3
+              offset: 0
+              count: 4
+              normalized: true
+              perInstance: false
+            - type: texcoord1
+              dataType: float
+              bufferName: ""
+              elements: 2
+              offset: 12
+              count: 4
+              normalized: true
+              perInstance: false
+          data: AAAAAJDjOEEAAAAAAABsPgAAAAAAAMhBkOM4QQAAAAAAAI8+AAAAAAAAyEHkOC5CAAAAAAAAjz4AAIA9AAAAAOQ4LkIAAAAAAABsPgAAgD0=
+        indices:
+          type: index_buffer
+          usage: dynamic
+          stride: 2
+          size: 12
+          count: 6
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: index
+              dataType: unsigned_short
+              bufferName: ""
+              elements: 1
+              offset: 0
+              count: 6
+              normalized: true
+              perInstance: false
+          data: AAABAAIAAAACAAMA
+        minBufferCount: 64
+        minIndicesCount: 96
+        primitiveType: triangles
+        vertexCount: 6
+        aabb:
+          min: [0, 0, 0]
+          max: [25, 43.555557, 0]
+        worldAABB:
+          min: [623, 0, 0]
+          max: [648, 43.555557, 0]
+        texture:
+          textureType: 2D
+          source: id
+          id: assets/fonts/KenneyFutureNarrow.ttf|56#8
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: false
+        color: [1, 0.92, 0.25, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 35
+        height: 56
+        anchorPointLeft: 0.5
+        anchorPointTop: 0
+        anchorPointRight: 0.5
+        anchorPointBottom: 0
+        anchorOffsetLeft: -17
+        anchorOffsetTop: 0
+        anchorOffsetRight: 18
+        anchorOffsetBottom: 56
+        positionOffset: [0, 0]
+        anchorPreset: CENTER_TOP
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [0, 0, 0, 0]
+        ignoreScissor: false
+        ignoreEvents: true
+      text:
+        font: [assets/fonts/KenneyFutureNarrow.ttf]
+        text: 5
+        fontSize: 56
+        multiline: false
+        maxTextSize: 16
+        fixedWidth: false
+        fixedHeight: false
+        pivotBaseline: false
+        pivotCentered: false
+  - type: Entity
+    entity: 1002
+    name: Get Ready
+    components:
+      transform:
+        position: [440, 196, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [440, 196, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [440, 196, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [440, 196, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: false
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        buffer:
+          type: vertex_buffer
+          usage: dynamic
+          stride: 36
+          size: 576
+          count: 16
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: position
+              dataType: float
+              bufferName: ""
+              elements: 3
+              offset: 0
+              count: 16
+              normalized: true
+              perInstance: false
+            - type: texcoord1
+              dataType: float
+              bufferName: ""
+              elements: 2
+              offset: 12
+              count: 16
+              normalized: true
+              perInstance: false
+            - type: color
+              dataType: float
+              bufferName: ""
+              elements: 4
+              offset: 20
+              count: 16
+              normalized: true
+              perInstance: false
+          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AADIQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADIQwAAkkIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAkkIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AADIQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADIQwAAkkIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAkkIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AADIQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADIQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADIQwAAkkIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AADIQwAAkkIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAkkIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAkkIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+        indices:
+          type: index_buffer
+          usage: dynamic
+          stride: 2
+          size: 108
+          count: 54
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: index
+              dataType: unsigned_short
+              bufferName: ""
+              elements: 1
+              offset: 0
+              count: 54
+              normalized: true
+              perInstance: false
+          data: BAAFAAYABAAGAAcAAAAIAAQAAAAEAAkACAAKAAUACAAFAAQACgABAAsACgALAAUABQALAA0ABQANAAYABgANAAIABgACAAwABwAGAAwABwAMAA4ADwAHAA4ADwAOAAMACQAEAAcACQAHAA8A
+        minBufferCount: 0
+        minIndicesCount: 0
+        primitiveType: triangles
+        vertexCount: 54
+        aabb:
+          min: [0, 0, 0]
+          max: [400, 73, 0]
+        worldAABB:
+          min: [440, 196, 0]
+          max: [840, 269, 0]
+        texture:
+          textureType: 2D
+          source: path
+          path: assets/ui/text-get-ready.png
+          minFilter: linear
+          magFilter: linear
+          wrapU: clamp_to_edge
+          wrapV: clamp_to_edge
+          releaseDataAfterLoad: true
+        color: [1, 1, 1, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 400
+        height: 73
+        anchorPointLeft: 0.5
+        anchorPointTop: 0.5
+        anchorPointRight: 0.5
+        anchorPointBottom: 0.5
+        anchorOffsetLeft: -200
+        anchorOffsetTop: -36
+        anchorOffsetRight: 200
+        anchorOffsetBottom: 37
+        positionOffset: [0, -128]
+        anchorPreset: CENTER
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [490, 246, 400, 73]
+        ignoreScissor: false
+        ignoreEvents: true
+      image:
+        patchMarginLeft: 0
+        patchMarginRight: 0
+        patchMarginTop: 0
+        patchMarginBottom: 0
+        textureScaleFactor: 0
+  - type: Entity
+    entity: 1003
+    name: Game Over
+    components:
+      transform:
+        position: [434, 183, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [434, 183, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [434, 183, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [434, 183, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        buffer:
+          type: vertex_buffer
+          usage: dynamic
+          stride: 36
+          size: 576
+          count: 16
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: position
+              dataType: float
+              bufferName: ""
+              elements: 3
+              offset: 0
+              count: 16
+              normalized: true
+              perInstance: false
+            - type: texcoord1
+              dataType: float
+              bufferName: ""
+              elements: 2
+              offset: 12
+              count: 16
+              normalized: true
+              perInstance: false
+            - type: color
+              dataType: float
+              bufferName: ""
+              elements: 4
+              offset: 20
+              count: 16
+              normalized: true
+              perInstance: false
+          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AADOQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADOQwAAnEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAnEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AADOQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADOQwAAnEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAnEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AADOQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADOQwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AADOQwAAnEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AADOQwAAnEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAnEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAnEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+        indices:
+          type: index_buffer
+          usage: dynamic
+          stride: 2
+          size: 108
+          count: 54
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: index
+              dataType: unsigned_short
+              bufferName: ""
+              elements: 1
+              offset: 0
+              count: 54
+              normalized: true
+              perInstance: false
+          data: BAAFAAYABAAGAAcAAAAIAAQAAAAEAAkACAAKAAUACAAFAAQACgABAAsACgALAAUABQALAA0ABQANAAYABgANAAIABgACAAwABwAGAAwABwAMAA4ADwAHAA4ADwAOAAMACQAEAAcACQAHAA8A
+        minBufferCount: 0
+        minIndicesCount: 0
+        primitiveType: triangles
+        vertexCount: 54
+        aabb:
+          min: [0, 0, 0]
+          max: [412, 78, 0]
+        worldAABB:
+          min: [434, 183, 0]
+          max: [846, 261, 0]
+        texture:
+          textureType: 2D
+          source: path
+          path: assets/ui/text-game-over.png
+          minFilter: linear
+          magFilter: linear
+          wrapU: clamp_to_edge
+          wrapV: clamp_to_edge
+          releaseDataAfterLoad: true
+        color: [1, 1, 1, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 412
+        height: 78
+        anchorPointLeft: 0.5
+        anchorPointTop: 0.5
+        anchorPointRight: 0.5
+        anchorPointBottom: 0.5
+        anchorOffsetLeft: -206
+        anchorOffsetTop: -39
+        anchorOffsetRight: 206
+        anchorOffsetBottom: 39
+        positionOffset: [0, -138]
+        anchorPreset: CENTER
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [484, 233.00002, 412, 77.999985]
+        ignoreScissor: false
+        ignoreEvents: true
+      image:
+        patchMarginLeft: 0
+        patchMarginRight: 0
+        patchMarginTop: 0
+        patchMarginBottom: 0
+        textureScaleFactor: 0
+  - type: Entity
+    entity: 1004
+    name: Tap Hint
+    components:
+      transform:
+        position: [611, 293.54846, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [611, 293.54846, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [611, 293.54846, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [611, 293.54846, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: false
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        buffer:
+          type: vertex_buffer
+          usage: dynamic
+          stride: 36
+          size: 576
+          count: 16
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: position
+              dataType: float
+              bufferName: ""
+              elements: 3
+              offset: 0
+              count: 16
+              normalized: true
+              perInstance: false
+            - type: texcoord1
+              dataType: float
+              bufferName: ""
+              elements: 2
+              offset: 12
+              count: 16
+              normalized: true
+              perInstance: false
+            - type: color
+              dataType: float
+              bufferName: ""
+              elements: 4
+              offset: 20
+              count: 16
+              normalized: true
+              perInstance: false
+          data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AABsQgAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABsQgAAbEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAbEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AABsQgAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABsQgAAbEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAbEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AABsQgAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABsQgAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AABsQgAAbEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AABsQgAAbEIAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAbEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAbEIAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/
+        indices:
+          type: index_buffer
+          usage: dynamic
+          stride: 2
+          size: 108
+          count: 54
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: index
+              dataType: unsigned_short
+              bufferName: ""
+              elements: 1
+              offset: 0
+              count: 54
+              normalized: true
+              perInstance: false
+          data: BAAFAAYABAAGAAcAAAAIAAQAAAAEAAkACAAKAAUACAAFAAQACgABAAsACgALAAUABQALAA0ABQANAAYABgANAAIABgACAAwABwAGAAwABwAMAA4ADwAHAA4ADwAOAAMACQAEAAcACQAHAA8A
+        minBufferCount: 0
+        minIndicesCount: 0
+        primitiveType: triangles
+        vertexCount: 54
+        aabb:
+          min: [0, 0, 0]
+          max: [59, 59, 0]
+        worldAABB:
+          min: [611, 293.54846, 0]
+          max: [670, 352.54846, 0]
+        texture:
+          textureType: 2D
+          source: path
+          path: assets/ui/tap.png
+          minFilter: linear
+          magFilter: linear
+          wrapU: clamp_to_edge
+          wrapV: clamp_to_edge
+          releaseDataAfterLoad: true
+        color: [1, 1, 1, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 59
+        height: 59
+        anchorPointLeft: 0.5
+        anchorPointTop: 0.5
+        anchorPointRight: 0.5
+        anchorPointBottom: 0.5
+        anchorOffsetLeft: -29
+        anchorOffsetTop: -29
+        anchorOffsetRight: 30
+        anchorOffsetBottom: 30
+        positionOffset: [0, -37.451538]
+        anchorPreset: CENTER
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [661, 343.54846, 58.99994, 59]
+        ignoreScissor: false
+        ignoreEvents: true
+      image:
+        patchMarginLeft: 0
+        patchMarginRight: 0
+        patchMarginTop: 0
+        patchMarginBottom: 0
+        textureScaleFactor: 0
+  - type: Entity
+    entity: 1005
+    name: Best Score
+    components:
+      transform:
+        position: [592, 298, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [592, 298, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [592, 298, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [592, 298, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        buffer:
+          type: vertex_buffer
+          usage: dynamic
+          stride: 20
+          size: 560
+          count: 28
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: position
+              dataType: float
+              bufferName: ""
+              elements: 3
+              offset: 0
+              count: 28
+              normalized: true
+              perInstance: false
+            - type: texcoord1
+              dataType: float
+              bufferName: ""
+              elements: 2
+              offset: 12
+              count: 28
+              normalized: true
+              perInstance: false
+          data: AAAAAJDjuEAAAAAAAAAAAAAAAAAAAFBBkOO4QAAAAAAAANA8AAAAAAAAUEHkOK5BAAAAAAAA0DwAAAA9AAAAAOQ4rkEAAAAAAAAAAAAAAD0AAJBBkOO4QAAAAAAAAOA8AAAAAAAA+EGQ47hAAAAAAAAAWD0AAAAAAAD4QeQ4rkEAAAAAAABYPQAAAD0AAJBB5DiuQQAAAAAAAOA8AAAAPQAADEKQ47hAAAAAAAAAYD0AAAAAAABAQpDjuEAAAAAAAACkPQAAAAAAAEBC5DiuQQAAAAAAAKQ9AAAAPQAADELkOK5BAAAAAAAAYD0AAAA9AABUQpDjuEAAAAAAAACoPQAAAAAAAHxCkOO4QAAAAAAAANA9AAAAAAAAfELkOK5BAAAAAAAA0D0AAAA9AABUQuQ4rkEAAAAAAACoPQAAAD0AAIZC5DiuQQAAAAAAAAAAAAAAAAAAhkLkOK5BAAAAAAAAAAAAAAAAAACGQuQ4rkEAAAAAAAAAAAAAAAAAAIZC5DiuQQAAAAAAAAAAAAAAAAAAlELkOK5BAAAAAAAAAAAAAAAAAACUQuQ4rkEAAAAAAAAAAAAAAAAAAJRC5DiuQQAAAAAAAAAAAAAAAAAAlELkOK5BAAAAAAAAAAAAAAAAAACgQpDjuEAAAAAAAADUPQAAAAAAALpCkOO4QAAAAAAAAAQ+AAAAAAAAukLkOK5BAAAAAAAABD4AAAA9AACgQuQ4rkEAAAAAAADUPQAAAD0=
+        indices:
+          type: index_buffer
+          usage: dynamic
+          stride: 2
+          size: 84
+          count: 42
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: index
+              dataType: unsigned_short
+              bufferName: ""
+              elements: 1
+              offset: 0
+              count: 42
+              normalized: true
+              perInstance: false
+          data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsA
+        minBufferCount: 128
+        minIndicesCount: 192
+        primitiveType: triangles
+        vertexCount: 42
+        aabb:
+          min: [0, 0, 0]
+          max: [93, 21.777779, 0]
+        worldAABB:
+          min: [592, 298, 0]
+          max: [685, 319.77777, 0]
+        texture:
+          textureType: 2D
+          source: id
+          id: assets/fonts/KenneyFutureNarrow.ttf|28#9
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: false
+        color: [1, 1, 1, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 97
+        height: 28
+        anchorPointLeft: 0.5
+        anchorPointTop: 0.5
+        anchorPointRight: 0.5
+        anchorPointBottom: 0.5
+        anchorOffsetLeft: -48
+        anchorOffsetTop: -14
+        anchorOffsetRight: 49
+        anchorOffsetBottom: 14
+        positionOffset: [0, -48]
+        anchorPreset: CENTER
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [0, 0, 0, 0]
+        ignoreScissor: false
+        ignoreEvents: true
+      text:
+        font: [assets/fonts/KenneyFutureNarrow.ttf]
+        text: Best  8
+        fontSize: 28
+        multiline: false
+        maxTextSize: 32
+        fixedWidth: false
+        fixedHeight: false
+        pivotBaseline: false
+        pivotCentered: false
+  - type: Entity
+    entity: 1006
+    name: Hint
+    components:
+      transform:
+        position: [522, 349, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [522, 349, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [522, 349, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [522, 349, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        buffer:
+          type: vertex_buffer
+          usage: dynamic
+          stride: 20
+          size: 1600
+          count: 80
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: position
+              dataType: float
+              bufferName: ""
+              elements: 3
+              offset: 0
+              count: 80
+              normalized: true
+              perInstance: false
+            - type: texcoord1
+              dataType: float
+              bufferName: ""
+              elements: 2
+              offset: 12
+              count: 80
+              normalized: true
+              perInstance: false
+          data: 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
+        indices:
+          type: index_buffer
+          usage: dynamic
+          stride: 2
+          size: 240
+          count: 120
+          renderAttributes: true
+          instanceBuffer: false
+          attributes:
+            - type: index
+              dataType: unsigned_short
+              bufferName: ""
+              elements: 1
+              offset: 0
+              count: 120
+              normalized: true
+              perInstance: false
+          data: AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA1ADYANAA2ADcAOAA5ADoAOAA6ADsAPAA9AD4APAA+AD8AQABBAEIAQABCAEMARABFAEYARABGAEcASABJAEoASABKAEsATABNAE4ATABOAE8A
+        minBufferCount: 192
+        minIndicesCount: 288
+        primitiveType: triangles
+        vertexCount: 120
+        aabb:
+          min: [0, 0, 0]
+          max: [234, 17.11111, 0]
+        worldAABB:
+          min: [522, 349, 0]
+          max: [756, 366.1111, 0]
+        texture:
+          textureType: 2D
+          source: id
+          id: assets/fonts/KenneyFutureNarrow.ttf|22#21
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: false
+        color: [0.15, 0.22, 0.28, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 237
+        height: 22
+        anchorPointLeft: 0.5
+        anchorPointTop: 0.5
+        anchorPointRight: 0.5
+        anchorPointBottom: 0.5
+        anchorOffsetLeft: -118
+        anchorOffsetTop: -11
+        anchorOffsetRight: 119
+        anchorOffsetBottom: 11
+        positionOffset: [0, 0]
+        anchorPreset: CENTER
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [0, 0, 0, 0]
+        ignoreScissor: false
+        ignoreEvents: true
+      text:
+        font: [assets/fonts/KenneyFutureNarrow.ttf]
+        text: Press again to retry
+        fontSize: 22
+        multiline: false
+        maxTextSize: 48
+        fixedWidth: false
+        fixedHeight: false
+        pivotBaseline: false
+        pivotCentered: false
