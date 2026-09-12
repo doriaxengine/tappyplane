@@ -678,14 +678,14 @@ entities:
         name: Rock Bottom 1
         components:
           transform:
-            position: [1360, 118, 0]
+            position: [1360, 0, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [1360, 118, 0]
+            worldPosition: [1360, 0, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1360, 118, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1360, 118, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1360, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1360, 0, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -737,12 +737,12 @@ entities:
             morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
             aabb:
               min: [-70, 0, 0]
-              max: [70, 185, 0]
+              max: [70, 303, 0]
             verticesAABB:
               min: [-70, 0, 0]
-              max: [70, 185, 0]
+              max: [70, 303, 0]
             worldAABB:
-              min: [1290, 118, 0]
+              min: [1290, 0, 0]
               max: [1430, 303, 0]
             receiveLights: false
             receiveIBL: false
@@ -755,7 +755,7 @@ entities:
             windingOrder: ccw
           sprite:
             width: 140
-            height: 185
+            height: 303
             automaticFlipY: true
             flipY: true
             textureScaleFactor: 0
@@ -852,14 +852,14 @@ entities:
         name: Rock Bottom 2
         components:
           transform:
-            position: [1790, 118, 0]
+            position: [1790, 0, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [1790, 118, 0]
+            worldPosition: [1790, 0, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1790, 118, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1790, 118, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1790, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1790, 0, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -911,12 +911,12 @@ entities:
             morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
             aabb:
               min: [-70, 0, 0]
-              max: [70, 185, 0]
+              max: [70, 303, 0]
             verticesAABB:
               min: [-70, 0, 0]
-              max: [70, 185, 0]
+              max: [70, 303, 0]
             worldAABB:
-              min: [1720, 118, 0]
+              min: [1720, 0, 0]
               max: [1860, 303, 0]
             receiveLights: false
             receiveIBL: false
@@ -929,7 +929,7 @@ entities:
             windingOrder: ccw
           sprite:
             width: 140
-            height: 185
+            height: 303
             automaticFlipY: true
             flipY: true
             textureScaleFactor: 0
@@ -1026,14 +1026,14 @@ entities:
         name: Rock Bottom 3
         components:
           transform:
-            position: [2220, 118, 0]
+            position: [2220, 0, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [2220, 118, 0]
+            worldPosition: [2220, 0, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [2220, 118, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [2220, 118, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [2220, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [2220, 0, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -1085,12 +1085,12 @@ entities:
             morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
             aabb:
               min: [-70, 0, 0]
-              max: [70, 185, 0]
+              max: [70, 303, 0]
             verticesAABB:
               min: [-70, 0, 0]
-              max: [70, 185, 0]
+              max: [70, 303, 0]
             worldAABB:
-              min: [2150, 118, 0]
+              min: [2150, 0, 0]
               max: [2290, 303, 0]
             receiveLights: false
             receiveIBL: false
@@ -1103,7 +1103,7 @@ entities:
             windingOrder: ccw
           sprite:
             width: 140
-            height: 185
+            height: 303
             automaticFlipY: true
             flipY: true
             textureScaleFactor: 0
@@ -1200,14 +1200,14 @@ entities:
         name: Rock Bottom 4
         components:
           transform:
-            position: [2650, 118, 0]
+            position: [2650, 0, 0]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [2650, 118, 0]
+            worldPosition: [2650, 0, 0]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [2650, 118, 0, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [2650, 118, 0, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [2650, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [2650, 0, 0, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -1259,12 +1259,12 @@ entities:
             morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
             aabb:
               min: [-70, 0, 0]
-              max: [70, 185, 0]
+              max: [70, 303, 0]
             verticesAABB:
               min: [-70, 0, 0]
-              max: [70, 185, 0]
+              max: [70, 303, 0]
             worldAABB:
-              min: [2580, 118, 0]
+              min: [2580, 0, 0]
               max: [2720, 303, 0]
             receiveLights: false
             receiveIBL: false
@@ -1277,7 +1277,7 @@ entities:
             windingOrder: ccw
           sprite:
             width: 140
-            height: 185
+            height: 303
             automaticFlipY: true
             flipY: true
             textureScaleFactor: 0

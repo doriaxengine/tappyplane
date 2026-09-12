@@ -133,7 +133,7 @@ function GameController:layoutPipe(pipe, x)
 
     local gapBottom = gapCenter - self.gapSize * 0.5
     local gapTop = gapCenter + self.gapSize * 0.5
-    local bottomHeight = math.max(64, math.floor(gapBottom - self.groundHeight + 8))
+    local bottomHeight = math.max(64, math.floor(gapBottom + 8))
     local topHeight = math.max(64, math.floor(self.canvasH - gapTop + 8))
 
     pipe.x = x
@@ -142,7 +142,7 @@ function GameController:layoutPipe(pipe, x)
     pipe.topHeight = topHeight
     pipe.bottom:setSize(self.pipeWidth, bottomHeight)
     pipe.top:setSize(self.pipeWidth, topHeight)
-    pipe.bottom.position = Vector3(x, self.groundHeight, 0)
+    pipe.bottom.position = Vector3(x, 0, 0)
     pipe.top.position = Vector3(x, self.canvasH, 0)
 end
 
@@ -264,7 +264,7 @@ function GameController:updatePipes(dt)
         if pipe.x < recycleX then
             self:layoutPipe(pipe, self:rightmostPipeX() + self.pipeSpacing)
         else
-            pipe.bottom.position = Vector3(pipe.x, self.groundHeight, 0)
+            pipe.bottom.position = Vector3(pipe.x, 0, 0)
             pipe.top.position = Vector3(pipe.x, self.canvasH, 0)
         end
 
@@ -300,7 +300,7 @@ function GameController:checkCollisions()
         local pipe = self.pipes[i]
         local bx = pipe.x - self.pipeWidth * 0.5 + inset
         local bw = self.pipeWidth - inset * 2
-        if rectsOverlap(px, py, pw, ph, bx, self.groundHeight, bw, pipe.bottomHeight - 6) then
+        if rectsOverlap(px, py, pw, ph, bx, 0, bw, pipe.bottomHeight - 6) then
             return true
         end
         if rectsOverlap(px, py, pw, ph, bx, self.canvasH - pipe.topHeight + 6, bw, pipe.topHeight - 6) then
