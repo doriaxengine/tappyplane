@@ -156,7 +156,13 @@
       background: #000;
     }
 
+    /* Pin the canvas to the 16:9 stage. An in-flow <canvas> keeps a 300×150
+       intrinsic size, so height: 100% does not match the stage and Doriax
+       letterboxes the 1280×720 view into a taller buffer (OpenGL origin is
+       bottom-left, so the leftover clear color shows as a bar on top). */
     #canvas {
+      position: absolute;
+      inset: 0;
       display: block;
       width: 100%;
       height: 100%;
@@ -340,7 +346,7 @@
 
       <section class="game-card" aria-label="Tappy Plane demo">
         <div class="stage" id="stage">
-          <canvas id="canvas" tabindex="0" oncontextmenu="event.preventDefault()" aria-label="Interactive game canvas"></canvas>
+          <canvas id="canvas" width="1280" height="720" tabindex="0" oncontextmenu="event.preventDefault()" aria-label="Interactive game canvas"></canvas>
           <div class="loading" id="loading" role="status" aria-live="polite">
             <div class="loading-content">
               <div class="spinner" aria-hidden="true"></div>
