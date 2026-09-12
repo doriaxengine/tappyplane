@@ -11,6 +11,8 @@ windowWidth: 1280
 windowHeight: 720
 windowResizable: true
 luaDir: .
+web:
+  resizeCanvasToWindow: false
 startSceneId: 1
 terrainEditor:
   brushMode: Raise
