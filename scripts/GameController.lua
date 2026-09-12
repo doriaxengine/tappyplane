@@ -90,7 +90,7 @@ function GameController:init()
     self.pipeWidth = 140
     self.spawnX = self.canvasW * 0.28
     self.spawnY = self.canvasH * 0.55
-    self.firstPipeX = self.canvasW - self.pipeWidth - 40
+    self.firstPipeX = self.canvasW + self.pipeWidth * 0.5 + 40
 
     self:bindScene()
     -- Overlap tiles by 2px so adjacent quads cannot leave a 1px crack
