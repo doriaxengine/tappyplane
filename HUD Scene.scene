@@ -87,7 +87,7 @@ entities:
               count: 4
               normalized: true
               perInstance: false
-          data: AAAAAJDjOEEAAAAAAABsPgAAAAAAAMhBkOM4QQAAAAAAAI8+AAAAAAAAyEHkOC5CAAAAAAAAjz4AAIA9AAAAAOQ4LkIAAAAAAABsPgAAgD0=
+          data: AAAAAJDjOEEAAAAAAABQPQAAAAAAAMhBkOM4QQAAAAAAAMw9AAAAAAAAyEHkOC5CAAAAAAAAzD0AAIA9AAAAAOQ4LkIAAAAAAABQPQAAgD0=
         indices:
           type: index_buffer
           usage: dynamic
@@ -119,7 +119,7 @@ entities:
         texture:
           textureType: 2D
           source: id
-          id: assets/fonts/KenneyFutureNarrow.ttf|56#8
+          id: assets/fonts/KenneyFutureNarrow.ttf|56#3
           minFilter: linear
           magFilter: linear
           wrapU: repeat
@@ -392,7 +392,7 @@ entities:
         usingAnchors: true
         panel: 0
         containerBoxIndex: -1
-        scissor: [484, 233.00002, 412, 77.999985]
+        scissor: [484, 233, 412, 78]
         ignoreScissor: false
         ignoreEvents: true
       image:
@@ -513,7 +513,7 @@ entities:
         usingAnchors: true
         panel: 0
         containerBoxIndex: -1
-        scissor: [661, 343.54846, 58.99994, 59]
+        scissor: [661, 343.5485, 58.99994, 59]
         ignoreScissor: false
         ignoreEvents: true
       image:
@@ -605,7 +605,7 @@ entities:
           wrapU: repeat
           wrapV: repeat
           releaseDataAfterLoad: false
-        color: [1, 1, 1, 1]
+        color: [0.09916021, 0.04909075, 0.04909075, 1]
         automaticFlipY: true
         flipY: false
         pointerMoved: false
