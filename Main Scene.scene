@@ -3,6 +3,9 @@ name: Main Scene
 scene:
   backgroundColor: [0, 0, 0, 1]
   shadowQuality: low
+  meshLodEnabled: true
+  meshLodThreshold: 1
+  depthPrepassEnabled: false
   lightState: off
   globalIlluminationIntensity: 0.1
   globalIlluminationColor: [1, 1, 1]
@@ -41,6 +44,8 @@ shaderKeys:
   - type: depth
   - type: depth
     properties: 1
+  - type: depth
+    properties: 129
   - type: blit
 childScenes:
   - id: 3
@@ -311,6 +316,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -360,6 +366,8 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
             transparent: false
@@ -398,6 +406,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -447,6 +456,8 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
             transparent: false
@@ -505,6 +516,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -554,9 +566,11 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
-            transparent: true
+            transparent: false
             cullingMode: back
             windingOrder: ccw
           sprite:
@@ -592,6 +606,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -641,6 +656,8 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
             transparent: false
@@ -699,6 +716,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -748,9 +766,11 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
-            transparent: true
+            transparent: false
             cullingMode: back
             windingOrder: ccw
           sprite:
@@ -786,6 +806,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -835,9 +856,11 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
-            transparent: true
+            transparent: false
             cullingMode: back
             windingOrder: ccw
           sprite:
@@ -873,6 +896,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -922,6 +946,8 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
             transparent: false
@@ -960,6 +986,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -1009,6 +1036,8 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
             transparent: false
@@ -1047,6 +1076,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -1096,6 +1126,8 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
             transparent: false
@@ -1134,6 +1166,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -1183,6 +1216,8 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
             transparent: false
@@ -1221,6 +1256,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -1270,6 +1306,8 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
             transparent: false
@@ -1308,6 +1346,7 @@ entities:
                   metallicFactor: 1
                   roughnessFactor: 1
                   alphaCutoff: 0.5
+                  foliageTransmission: 0
                   alphaMode: AUTO
                   emissiveFactor: [0, 0, 0]
                   baseColorTexture:
@@ -1357,6 +1396,8 @@ entities:
             receiveIBL: false
             castShadows: false
             receiveShadows: false
+            lodEnabled: true
+            lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
             transparent: false
@@ -1395,6 +1436,7 @@ entities:
               metallicFactor: 1
               roughnessFactor: 1
               alphaCutoff: 0.5
+              foliageTransmission: 0
               alphaMode: AUTO
               emissiveFactor: [0, 0, 0]
               baseColorTexture:
@@ -1444,9 +1486,11 @@ entities:
         receiveIBL: false
         castShadows: false
         receiveShadows: false
+        lodEnabled: true
+        lodBias: 1
         renderInReflectionProbes: true
         shadowsBillboard: false
-        transparent: true
+        transparent: false
         cullingMode: back
         windingOrder: ccw
       sprite:

@@ -13,7 +13,6 @@ set(PROJECT_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 set(INTERNAL_DIR ${PROJECT_ROOT}/.doriax)
 
 # Doriax runtime API headers for this project come from ${INTERNAL_DIR}/engine-api.
-# Local engine API source used by this editor build: /home/eduardo/Development/doriax/build/engine
 # Full engine + editor source (including YAML serialization for *.scene/*.bundle/project.yaml): https://github.com/doriaxengine/doriax
 
 set(DORIAX_API_DIR ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api)
@@ -26,6 +25,8 @@ set(CMAKE_OBJCXX_STANDARD_REQUIRED ON)
 
 # Build mode: when ON, build as Doriax Editor plugin (shared library)
 option(DORIAX_EDITOR_PLUGIN "Build as Doriax Editor plugin" OFF)
+add_compile_definitions(DORIAX_PHYSICS_2D DORIAX_PHYSICS_3D)
+
 if(DORIAX_EDITOR_PLUGIN)
     add_compile_definitions(DORIAX_EDITOR_PLUGIN)
     # The editor links its own engine build, which is compiled as a shared
@@ -59,9 +60,18 @@ if (NOT DORIAX_EDITOR_PLUGIN)
 
     add_definitions("-DWITH_MINIAUDIO") # For SoLoud
 
-    add_definitions("-DDORIAX_ASSET_PATH=\"/home/eduardo/Development/tappyplane\"")
-    add_definitions("-DDORIAX_LUA_PATH=\"/home/eduardo/Development/tappyplane\"")
-    add_definitions("-DDORIAX_SHADER_PATH=\"/home/eduardo/.cache/doriax/shaders/v24\"")
+    add_definitions("-DDORIAX_ASSET_PATH=\"${PROJECT_ROOT}\"")
+    add_definitions("-DDORIAX_LUA_PATH=\"${PROJECT_ROOT}\"")
+
+    # The compiled shader cache sits in this user's cache directory and is named
+    # after the engine version, so its path belongs to neither the project nor any
+    # other machine. The editor writes it to ${INTERNAL_DIR}/LocalPaths.cmake, which
+    # version control ignores; -DDORIAX_SHADER_PATH=<dir> overrides it.
+    include(${INTERNAL_DIR}/LocalPaths.cmake OPTIONAL)
+    if(NOT DORIAX_SHADER_PATH)
+        message(FATAL_ERROR "DORIAX_SHADER_PATH is not set and ${INTERNAL_DIR}/LocalPaths.cmake is missing. Open this project in Doriax Editor once to regenerate it, or configure with -DDORIAX_SHADER_PATH=<shader cache directory>.")
+    endif()
+    add_definitions("-DDORIAX_SHADER_PATH=\"${DORIAX_SHADER_PATH}\"")
 
     list(APPEND PLATFORM_SOURCE
         ${INTERNAL_DIR}/generated/main.cpp
@@ -238,9 +248,11 @@ target_include_directories(TappyPlane ${DORIAX_LIB_SYSTEM} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/.doriax/engine-api/core/util
 )
 
-# libdoriax is searched in DORIAX_LIB_DIR; by default it points to the Doriax editor executable directory.
+# libdoriax is searched in DORIAX_LIB_DIR; by default it points to the Doriax editor
+# executable directory, which differs per machine and so comes from LocalPaths.cmake.
+include(${INTERNAL_DIR}/LocalPaths.cmake OPTIONAL)
 if(NOT DEFINED DORIAX_LIB_DIR OR DORIAX_LIB_DIR STREQUAL "")
-    set(DORIAX_LIB_DIR "/home/eduardo/Development/doriax/build")
+    set(DORIAX_LIB_DIR "${DORIAX_DEFAULT_LIB_DIR}")
     # Default target is the editor's own engine build (shared, editor layouts).
     # Match its macros so symbols link (DORIAX_SHARED -> dllimport on MSVC) and
     # data layouts stay ABI-compatible (DORIAX_EDITOR), avoiding ODR/ABI mismatch.
