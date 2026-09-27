@@ -3,6 +3,9 @@ name: HUD Scene
 scene:
   backgroundColor: [0.525, 0.525, 0.525, 1]
   shadowQuality: low
+  meshLodEnabled: true
+  meshLodThreshold: 1
+  depthPrepassEnabled: false
   lightState: off
   globalIlluminationIntensity: 0.1
   globalIlluminationColor: [1, 1, 1]
@@ -116,15 +119,7 @@ entities:
         worldAABB:
           min: [623, 0, 0]
           max: [648, 43.555557, 0]
-        texture:
-          textureType: 2D
-          source: id
-          id: assets/fonts/KenneyFutureNarrow.ttf|56#3
-          minFilter: linear
-          magFilter: linear
-          wrapU: repeat
-          wrapV: repeat
-          releaseDataAfterLoad: false
+        texture: ~
         color: [1, 0.92, 0.25, 1]
         automaticFlipY: true
         flipY: false
@@ -142,6 +137,7 @@ entities:
         anchorOffsetRight: 18
         anchorOffsetBottom: 56
         positionOffset: [0, 0]
+        pivot: [0, 0]
         anchorPreset: CENTER_TOP
         usingAnchors: true
         panel: 0
@@ -150,7 +146,7 @@ entities:
         ignoreScissor: false
         ignoreEvents: true
       text:
-        font: [assets/fonts/KenneyFutureNarrow.ttf]
+        font: [fonts/KenneyFutureNarrow.ttf]
         text: 5
         fontSize: 56
         multiline: false
@@ -244,7 +240,7 @@ entities:
         texture:
           textureType: 2D
           source: path
-          path: assets/ui/text-get-ready.png
+          path: ui/text-get-ready.png
           minFilter: linear
           magFilter: linear
           wrapU: clamp_to_edge
@@ -267,6 +263,7 @@ entities:
         anchorOffsetRight: 200
         anchorOffsetBottom: 37
         positionOffset: [0, -128]
+        pivot: [0, 0]
         anchorPreset: CENTER
         usingAnchors: true
         panel: 0
@@ -365,7 +362,7 @@ entities:
         texture:
           textureType: 2D
           source: path
-          path: assets/ui/text-game-over.png
+          path: ui/text-game-over.png
           minFilter: linear
           magFilter: linear
           wrapU: clamp_to_edge
@@ -388,6 +385,7 @@ entities:
         anchorOffsetRight: 206
         anchorOffsetBottom: 39
         positionOffset: [0, -138]
+        pivot: [0, 0]
         anchorPreset: CENTER
         usingAnchors: true
         panel: 0
@@ -486,7 +484,7 @@ entities:
         texture:
           textureType: 2D
           source: path
-          path: assets/ui/tap.png
+          path: ui/tap.png
           minFilter: linear
           magFilter: linear
           wrapU: clamp_to_edge
@@ -509,6 +507,7 @@ entities:
         anchorOffsetRight: 30
         anchorOffsetBottom: 30
         positionOffset: [0, -37.451538]
+        pivot: [0, 0]
         anchorPreset: CENTER
         usingAnchors: true
         panel: 0
@@ -596,15 +595,7 @@ entities:
         worldAABB:
           min: [592, 298, 0]
           max: [685, 319.77777, 0]
-        texture:
-          textureType: 2D
-          source: id
-          id: assets/fonts/KenneyFutureNarrow.ttf|28#9
-          minFilter: linear
-          magFilter: linear
-          wrapU: repeat
-          wrapV: repeat
-          releaseDataAfterLoad: false
+        texture: ~
         color: [0.09916021, 0.04909075, 0.04909075, 1]
         automaticFlipY: true
         flipY: false
@@ -622,6 +613,7 @@ entities:
         anchorOffsetRight: 49
         anchorOffsetBottom: 14
         positionOffset: [0, -48]
+        pivot: [0, 0]
         anchorPreset: CENTER
         usingAnchors: true
         panel: 0
@@ -630,7 +622,7 @@ entities:
         ignoreScissor: false
         ignoreEvents: true
       text:
-        font: [assets/fonts/KenneyFutureNarrow.ttf]
+        font: [fonts/KenneyFutureNarrow.ttf]
         text: Best  8
         fontSize: 28
         multiline: false
@@ -713,15 +705,7 @@ entities:
         worldAABB:
           min: [522, 349, 0]
           max: [756, 366.1111, 0]
-        texture:
-          textureType: 2D
-          source: id
-          id: assets/fonts/KenneyFutureNarrow.ttf|22#21
-          minFilter: linear
-          magFilter: linear
-          wrapU: repeat
-          wrapV: repeat
-          releaseDataAfterLoad: false
+        texture: ~
         color: [0.15, 0.22, 0.28, 1]
         automaticFlipY: true
         flipY: false
@@ -739,6 +723,7 @@ entities:
         anchorOffsetRight: 119
         anchorOffsetBottom: 11
         positionOffset: [0, 0]
+        pivot: [0, 0]
         anchorPreset: CENTER
         usingAnchors: true
         panel: 0
@@ -747,7 +732,7 @@ entities:
         ignoreScissor: false
         ignoreEvents: true
       text:
-        font: [assets/fonts/KenneyFutureNarrow.ttf]
+        font: [fonts/KenneyFutureNarrow.ttf]
         text: Press again to retry
         fontSize: 22
         multiline: false

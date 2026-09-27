@@ -73,7 +73,7 @@ entities:
       script:
         scripts:
           - type: lua
-            path: scripts/GameController.lua
+            path: GameController.lua
             className: GameController
             enabled: true
             properties:
@@ -322,7 +322,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/background.png
+                    path: sprites/background.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -412,7 +412,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/background.png
+                    path: sprites/background.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -522,7 +522,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/ground.png
+                    path: sprites/ground.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -570,7 +570,7 @@ entities:
             lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
-            transparent: false
+            transparent: true
             cullingMode: back
             windingOrder: ccw
           sprite:
@@ -612,7 +612,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/ground.png
+                    path: sprites/ground.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -722,7 +722,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/rock.png
+                    path: sprites/rock.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -770,7 +770,7 @@ entities:
             lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
-            transparent: false
+            transparent: true
             cullingMode: back
             windingOrder: ccw
           sprite:
@@ -812,7 +812,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/rock-down.png
+                    path: sprites/rock-down.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -860,7 +860,7 @@ entities:
             lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
-            transparent: false
+            transparent: true
             cullingMode: back
             windingOrder: ccw
           sprite:
@@ -902,7 +902,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/rock.png
+                    path: sprites/rock.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -992,7 +992,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/rock-down.png
+                    path: sprites/rock-down.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -1082,7 +1082,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/rock.png
+                    path: sprites/rock.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -1172,7 +1172,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/rock-down.png
+                    path: sprites/rock-down.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -1262,7 +1262,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/rock.png
+                    path: sprites/rock.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -1352,7 +1352,7 @@ entities:
                   baseColorTexture:
                     textureType: 2D
                     source: path
-                    path: assets/sprites/rock-down.png
+                    path: sprites/rock-down.png
                     minFilter: linear
                     magFilter: linear
                     wrapU: clamp_to_edge
@@ -1442,7 +1442,7 @@ entities:
               baseColorTexture:
                 textureType: 2D
                 source: path
-                path: assets/sprites/plane-sheet.png
+                path: sprites/plane-sheet.png
                 minFilter: linear
                 magFilter: linear
                 wrapU: clamp_to_edge
@@ -1490,7 +1490,7 @@ entities:
         lodBias: 1
         renderInReflectionProbes: true
         shadowsBillboard: false
-        transparent: false
+        transparent: true
         cullingMode: back
         windingOrder: ccw
       sprite:
@@ -1532,7 +1532,7 @@ entities:
     components:
       sound:
         state: stopped
-        filename: assets/audio/flap.ogg
+        filename: audio/flap.ogg
         enableClocked: false
         volume: 0.55
         speed: 1
@@ -1553,7 +1553,7 @@ entities:
     components:
       sound:
         state: stopped
-        filename: assets/audio/score.ogg
+        filename: audio/score.ogg
         enableClocked: false
         volume: 0.7
         speed: 1
@@ -1574,7 +1574,7 @@ entities:
     components:
       sound:
         state: stopped
-        filename: assets/audio/hit.ogg
+        filename: audio/hit.ogg
         enableClocked: false
         volume: 0.8
         speed: 1
@@ -1595,7 +1595,7 @@ entities:
     components:
       sound:
         state: stopped
-        filename: assets/audio/game-over.ogg
+        filename: audio/game-over.ogg
         enableClocked: false
         volume: 0.7
         speed: 1

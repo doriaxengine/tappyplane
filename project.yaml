@@ -8,7 +8,13 @@ windowMode: windowed
 windowWidth: 1280
 windowHeight: 720
 windowResizable: true
-luaDir: .
+assetsDir: assets
+luaDir: scripts
+export:
+  sourceCode:
+    graphicBackends:
+      - opengles
+      - vulkan
 web:
   resizeCanvasToWindow: false
 startSceneId: 1

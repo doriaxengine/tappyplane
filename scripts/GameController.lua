@@ -48,78 +48,39 @@ local function rectsOverlap(ax, ay, aw, ah, bx, by, bw, bh)
     return ax < bx + bw and ax + aw > bx and ay < by + bh and ay + ah > by
 end
 
-function GameController:listSprites(...)
-    local list = {}
-    for i = 1, select("#", ...) do
-        local sprite = select(i, ...)
-        if sprite then
-            list[#list + 1] = sprite
-        end
-    end
-    return list
-end
-
-function GameController:addPipe(bottom, top)
-    if not bottom or not top then
-        return
-    end
-    self.pipes[#self.pipes + 1] = {
-        bottom = bottom,
-        top = top,
-        x = 0,
-        scored = false,
-        bottomHeight = 200,
-        topHeight = 200
-    }
-end
-
 function GameController:init()
-    self.time = 0
     RegisterEngineEvent(self, "onUpdate")
-
-    Engine.callMouseInTouchEvent = true
 
     self.canvasW = Engine.canvasWidth
     self.canvasH = Engine.canvasHeight
-    if self.canvasW <= 0 then self.canvasW = 1280 end
-    if self.canvasH <= 0 then self.canvasH = 720 end
 
-    self.groundHeight = 118
-    self.planeWidth = 88
-    self.planeHeight = 73
-    self.pipeWidth = 140
-    self.spawnX = self.canvasW * 0.28
-    self.spawnY = self.canvasH * 0.55
+    self.backgrounds = { self.background1, self.background2 }
+    self.grounds = { self.ground1, self.ground2 }
+    self.pipes = {
+        { bottom = self.rockBottom1, top = self.rockTop1 },
+        { bottom = self.rockBottom2, top = self.rockTop2 },
+        { bottom = self.rockBottom3, top = self.rockTop3 },
+        { bottom = self.rockBottom4, top = self.rockTop4 }
+    }
+
+    -- sizes and start position as placed in the scene
+    self.groundHeight = self.ground1.height
+    self.pipeWidth = self.rockBottom1.width
+    self.planeWidth = self.plane.width
+    self.planeHeight = self.plane.height
+    self.spawnX = self.plane.position.x
+    self.spawnY = self.plane.position.y
+    self.tapHintBaseY = self.tapHint.positionYOffset
     self.firstPipeX = self.canvasW + self.pipeWidth * 0.5 + 40
 
-    self:bindScene()
-    -- Overlap tiles by 2px so adjacent quads cannot leave a 1px crack
-    -- that shows the scene clear color while they scroll.
-    self.tileOverlap = 2
-    self.bgWidth = (self.backgrounds[1] and self.backgrounds[1].width)
-        or math.ceil(self.canvasH * (800 / 480))
-    self.groundWidth = (self.grounds[1] and self.grounds[1].width)
-        or math.ceil(self.groundHeight * (808 / 71))
-    self.tapHintBaseY = self.tapHintBaseY or -38
+    -- tiles overlap by 2px to hide the seam
+    self.bgStep = self.background1.width - 2
+    self.groundStep = self.ground1.width - 2
+
     self:resetGame(true)
 end
 
-function GameController:bindScene()
-    self.backgrounds = self:listSprites(self.background1, self.background2)
-    self.grounds = self:listSprites(self.ground1, self.ground2)
-    self.pipes = {}
-    self:addPipe(self.rockBottom1, self.rockTop1)
-    self:addPipe(self.rockBottom2, self.rockTop2)
-    self:addPipe(self.rockBottom3, self.rockTop3)
-    self:addPipe(self.rockBottom4, self.rockTop4)
-
-    if self.tapHint then
-        self.tapHintBaseY = self.tapHint.positionYOffset
-    end
-end
-
 function GameController:playSound(sound)
-    if not sound then return end
     sound:stop()
     sound:play()
 end
@@ -165,11 +126,8 @@ function GameController:resetGame(initial)
     self.flapHeld = false
     self.restartDelay = 0
 
-    self.plane.position = Vector3(self.spawnX, self.planeY, 3)
-    self.plane:setRotation(0, 0, 0)
-    if self.planeAnimation then
-        self.planeAnimation:start()
-    end
+    self:updatePlaneVisuals()
+    self.planeAnimation:start()
 
     self:resetPipes()
     self:syncHud()
@@ -192,8 +150,6 @@ function GameController:syncHud()
     elseif self.state == "dead" then
         self.hintText.text = "Press again to retry"
         self.bestText.text = "Best  " .. tostring(self.bestScore)
-    else
-        self.hintText.text = ""
     end
 end
 
@@ -216,33 +172,28 @@ function GameController:startRun()
 end
 
 function GameController:die()
-    if self.state ~= "playing" then return end
-
     self.state = "dead"
-    self.restartDelay = 0.45
+    self.restartDelay = 0.45 -- ignore flaps right after the crash
     if self.score > self.bestScore then
         self.bestScore = self.score
         UserSettings.setIntegerForKey(BEST_SCORE_KEY, self.bestScore)
     end
-    if self.planeAnimation then
-        self.planeAnimation:pause()
-    end
+    self.planeAnimation:pause()
     self:playSound(self.hitSound)
     self:playSound(self.gameOverSound)
     self:syncHud()
 end
 
 function GameController:updateScrolling(dt, speed)
-    local bgStep = math.max(1, self.bgWidth - self.tileOverlap)
-    local groundStep = math.max(1, self.groundWidth - self.tileOverlap)
-    self.bgOffset = (self.bgOffset + speed * 0.35 * dt) % bgStep
-    self.groundOffset = (self.groundOffset + speed * dt) % groundStep
+    -- background moves slower than the ground
+    self.bgOffset = (self.bgOffset + speed * 0.35 * dt) % self.bgStep
+    self.groundOffset = (self.groundOffset + speed * dt) % self.groundStep
 
     for i = 1, #self.backgrounds do
-        self.backgrounds[i].position = Vector3((i - 1) * bgStep - self.bgOffset, 0, -8)
+        self.backgrounds[i].position = Vector3((i - 1) * self.bgStep - self.bgOffset, 0, -8)
     end
     for i = 1, #self.grounds do
-        self.grounds[i].position = Vector3((i - 1) * groundStep - self.groundOffset, 0, 2)
+        self.grounds[i].position = Vector3((i - 1) * self.groundStep - self.groundOffset, 0, 2)
     end
 end
 
@@ -277,6 +228,7 @@ function GameController:updatePipes(dt)
     end
 end
 
+-- a bit smaller than the sprite, so near misses don't count
 function GameController:planeHitbox()
     local insetX = 16
     local insetY = 14
@@ -317,8 +269,6 @@ function GameController:updatePlaneVisuals()
 end
 
 function GameController:onUpdate()
-    if not self.plane or not self.scoreText then return end
-
     local dt = Engine.deltatime
     if dt > 0.05 then dt = 0.05 end
     self.time = self.time + dt
@@ -330,9 +280,7 @@ function GameController:onUpdate()
     if self.state == "ready" then
         self.planeY = self.spawnY + math.sin(self.time * 3.2) * 14
         self.planeAngle = math.sin(self.time * 3.2) * 8
-        if self.tapHint then
-            self.tapHint.positionYOffset = self.tapHintBaseY + math.sin(self.time * 5.0) * 8
-        end
+        self.tapHint.positionYOffset = self.tapHintBaseY + math.sin(self.time * 5.0) * 8
         self:updateScrolling(dt, self.scrollSpeed * 0.35)
         self:updatePlaneVisuals()
         if flapPressed then
