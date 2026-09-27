@@ -570,7 +570,7 @@ entities:
             lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
-            transparent: true
+            transparent: false
             cullingMode: back
             windingOrder: ccw
           sprite:
@@ -770,7 +770,7 @@ entities:
             lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
-            transparent: true
+            transparent: false
             cullingMode: back
             windingOrder: ccw
           sprite:
@@ -860,7 +860,7 @@ entities:
             lodBias: 1
             renderInReflectionProbes: true
             shadowsBillboard: false
-            transparent: true
+            transparent: false
             cullingMode: back
             windingOrder: ccw
           sprite:
@@ -1490,7 +1490,7 @@ entities:
         lodBias: 1
         renderInReflectionProbes: true
         shadowsBillboard: false
-        transparent: true
+        transparent: false
         cullingMode: back
         windingOrder: ccw
       sprite:
