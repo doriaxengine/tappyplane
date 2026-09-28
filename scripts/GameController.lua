@@ -51,8 +51,9 @@ end
 function GameController:init()
     RegisterEngineEvent(self, "onUpdate")
 
-    self.canvasW = Engine.canvasWidth
-    self.canvasH = Engine.canvasHeight
+    -- Engine.canvasWidth can still be 0 here in exported builds
+    self.canvasW = Engine.preferredCanvasWidth
+    self.canvasH = Engine.preferredCanvasHeight
 
     self.backgrounds = { self.background1, self.background2 }
     self.grounds = { self.ground1, self.ground2 }

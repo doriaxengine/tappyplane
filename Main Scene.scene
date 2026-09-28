@@ -355,13 +355,13 @@ entities:
             morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
             aabb:
               min: [0, 0, 0]
-              max: [1200, 720, 0]
+              max: [1280, 768, 0]
             verticesAABB:
               min: [0, 0, 0]
-              max: [1200, 720, 0]
+              max: [1280, 768, 0]
             worldAABB:
               min: [0, 0, -8]
-              max: [1200, 720, -8]
+              max: [1280, 768, -8]
             receiveLights: false
             receiveIBL: false
             castShadows: false
@@ -374,8 +374,8 @@ entities:
             cullingMode: back
             windingOrder: ccw
           sprite:
-            width: 1200
-            height: 720
+            width: 1280
+            height: 768
             automaticFlipY: true
             flipY: true
             textureScaleFactor: 0
@@ -385,14 +385,14 @@ entities:
         name: Background 2
         components:
           transform:
-            position: [1198, 0, -8]
+            position: [1278, 0, -8]
             rotation: [1, 0, 0, 0]
             scale: [1, 1, 1]
-            worldPosition: [1198, 0, -8]
+            worldPosition: [1278, 0, -8]
             worldRotation: [1, 0, 0, 0]
             worldScale: [1, 1, 1]
-            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1198, 0, -8, 1]]
-            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1198, 0, -8, 1]]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1278, 0, -8, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [1278, 0, -8, 1]]
             normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             visible: true
             billboardRotation: [1, 0, 0, 0]
@@ -445,13 +445,13 @@ entities:
             morphWeights: [0, 0, 0, 0, 0, 0, 0, 0]
             aabb:
               min: [0, 0, 0]
-              max: [1200, 720, 0]
+              max: [1280, 768, 0]
             verticesAABB:
               min: [0, 0, 0]
-              max: [1200, 720, 0]
+              max: [1280, 768, 0]
             worldAABB:
-              min: [1198, 0, -8]
-              max: [2398, 720, -8]
+              min: [1278, 0, -8]
+              max: [2558, 768, -8]
             receiveLights: false
             receiveIBL: false
             castShadows: false
@@ -464,8 +464,8 @@ entities:
             cullingMode: back
             windingOrder: ccw
           sprite:
-            width: 1200
-            height: 720
+            width: 1280
+            height: 768
             automaticFlipY: true
             flipY: true
             textureScaleFactor: 0
