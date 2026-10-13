@@ -64,6 +64,8 @@ function GameController:init()
         { bottom = self.rockBottom4, top = self.rockTop4 }
     }
 
+
+
     -- sizes and start position as placed in the scene
     self.groundHeight = self.ground1.height
     self.pipeWidth = self.rockBottom1.width

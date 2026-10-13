@@ -10,11 +10,8 @@ windowHeight: 720
 windowResizable: true
 assetsDir: assets
 luaDir: scripts
-export:
-  sourceCode:
-    graphicBackends:
-      - opengles
-      - vulkan
+application:
+  identifier: org.doriax.tappyplane
 web:
   resizeCanvasToWindow: false
 startSceneId: 1
