@@ -18,4 +18,4 @@ jobs:
       subtitle: Tap, click, or press space to keep the plane in the air.
       description: An endless flyer made with Doriax Engine. Tap, click, or press space to keep the plane in the air.
       controls: |
-        Flap [Space] [↑] or click / tap
+        Flap [Space] [↑], gamepad A, or click / tap

@@ -11,7 +11,7 @@ and press **Play**.
 
 | Input | Action |
 | --- | --- |
-| Space / Up, click or tap | Flap |
+| Space / Up, gamepad A, click or tap | Flap |
 
 Hitting a rock, the ground or the top of the screen ends the run. Flap again to retry.
 

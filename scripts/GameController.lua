@@ -157,6 +157,12 @@ function GameController:syncHud()
 end
 
 function GameController:isFlapDown()
+    for i = 0, Input.numGamepads() - 1 do
+        if Input.isGamepadButtonPressed(Input.getGamepadId(i), Input.GAMEPAD_BUTTON_A) then
+            return true
+        end
+    end
+
     return Input.isKeyPressed(Input.KEY_SPACE)
         or Input.isKeyPressed(Input.KEY_UP)
         or Input.isMousePressed(Input.MOUSE_BUTTON_LEFT)
